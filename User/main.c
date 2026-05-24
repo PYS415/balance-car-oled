@@ -11,14 +11,18 @@ int8_t Speed;
 
 int main(void)
 {
-	//灰度//
+	//鐏板害//
 	OLED_Init();
 	huidu_Init1();
 	huidu_Init2();
 	huidu_Init3();
 	huidu_Init4();
-	
-	//电机//
+	huidu_Init5();
+	huidu_Init6();
+	huidu_Init7();
+	huidu_Init8();
+
+	//鐢垫満//
 	Motor_Init1();
 	Motor_Init2();
 	Motor_Init3();
@@ -26,22 +30,29 @@ int main(void)
 
 	while (1)
 	{
-		//灰度测试//
-		OLED_ShowString(1, 1, "hd1:");
-		OLED_ShowString(2, 1, "hd2:");
-		OLED_ShowString(3, 1, "hd3:");
-		OLED_ShowString(4, 1, "hd4:");
-		
-		OLED_ShowSignedNum(1, 4, huidu_Read1(), 7);//灰度1识别值
-		OLED_ShowSignedNum(2, 4, huidu_Read2(), 7);//灰度2识别值
-		OLED_ShowSignedNum(3, 4, huidu_Read3(), 7);//灰度3识别值
-		OLED_ShowSignedNum(4, 4, huidu_Read4(), 7);//灰度4识别值
+		//鐏板害閲囨牱//
+		OLED_ShowString(1, 1, "1:");
+		OLED_ShowNum(1, 3, huidu_Read1(), 5);
+		OLED_ShowString(1, 8, " 5:");
+		OLED_ShowNum(1, 11, huidu_Read5(), 5);
+		OLED_ShowString(2, 1, "2:");
+		OLED_ShowNum(2, 3, huidu_Read2(), 5);
+		OLED_ShowString(2, 8, " 6:");
+		OLED_ShowNum(2, 11, huidu_Read6(), 5);
+		OLED_ShowString(3, 1, "3:");
+		OLED_ShowNum(3, 3, huidu_Read3(), 5);
+		OLED_ShowString(3, 8, " 7:");
+		OLED_ShowNum(3, 11, huidu_Read7(), 5);
+		OLED_ShowString(4, 1, "4:");
+		OLED_ShowNum(4, 3, huidu_Read4(), 5);
+		OLED_ShowString(4, 8, " 8:");
+		OLED_ShowNum(4, 11, huidu_Read8(), 5);
 
-		//电机测试//
+		//鐢垫満鎺у埗//
 		Motor_SetSpeed1(50);
 		Motor_SetSpeed2(50);
 		Motor_SetSpeed3(50);
 		Motor_SetSpeed4(50);
-		
+
 	}
 }
