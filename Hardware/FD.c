@@ -66,11 +66,11 @@ void huidu_Init4(void)
        //huidu_Init1//
 uint32_t huidu_Read1(void)
 {
-    uint32_t track_value1 = 0;  // ï¿½æ´¢ï¿½ï¿½È¨ï¿½ï¿½Íºï¿½Ä½ï¿½ï¿½
-    // ï¿½ï¿½ï¿½ï¿½Ã¿Ò»Â·ï¿½ï¿½Ó¦ï¿½ï¿½È¨ï¿½Ø£ï¿½ï¿½ï¿½Ë³ï¿½ò£ºµï¿½1Â·ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½2Â·ï¿½ï¿½10ï¿½ï¿½ï¿½ï¿½3Â·ï¿½ï¿½100...ï¿½ï¿½7Â·ï¿½ï¿½1000000ï¿½ï¿½
+    uint32_t track_value1 = 0;  // ´æ´¢¼ÓÈ¨ÇóºÍºóµÄ½á¹û
+    // ¶¨ÒåÃ¿Ò»Â·¶ÔÓ¦µÄÈ¨ÖØ£¨°´Ë³Ðò£ºµÚ1Â·¡Á1¡¢µÚ2Â·¡Á10¡¢µÚ3Â·¡Á100...µÚ7Â·¡Á1000000£©
     uint32_t weight1[] = {1, 10, 100, 1000, 10000, 100000, 1000000};
     
-    // ï¿½ï¿½Â·ï¿½ï¿½È¡ï¿½ï¿½Æ½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½Ó¦È¨ï¿½Øºï¿½ï¿½Û¼ï¿½
+    // ÖðÂ·¶ÁÈ¡µçÆ½£¬³ËÒÔ¶ÔÓ¦È¨ÖØºóÀÛ¼Ó
     track_value1 += (GPIO_ReadInputDataBit(GPIOG, GPIO_Pin_11) ? 1 : 0) * weight1[0];
     track_value1 += (GPIO_ReadInputDataBit(GPIOG, GPIO_Pin_10) ? 1 : 0) * weight1[1];
     track_value1 += (GPIO_ReadInputDataBit(GPIOG, GPIO_Pin_9) ? 1 : 0) * weight1[2];
@@ -79,7 +79,7 @@ uint32_t huidu_Read1(void)
     track_value1 += (GPIO_ReadInputDataBit(GPIOG, GPIO_Pin_6) ? 1 : 0) * weight1[5];
     track_value1 += (GPIO_ReadInputDataBit(GPIOG, GPIO_Pin_5) ? 1 : 0) * weight1[6];
     
-    return track_value1;  // ï¿½ï¿½ï¿½Ø¼ï¿½È¨ï¿½ï¿½
+    return track_value1;  // ·µ»Ø¼ÓÈ¨ºÍ
 }
 
 
@@ -87,11 +87,11 @@ uint32_t huidu_Read1(void)
        //huidu_Init2//
 uint32_t huidu_Read2(void)
 {
-    uint32_t track_value2 = 0;  // ï¿½æ´¢ï¿½ï¿½È¨ï¿½ï¿½Íºï¿½Ä½ï¿½ï¿½
-    // ï¿½ï¿½ï¿½ï¿½Ã¿Ò»Â·ï¿½ï¿½Ó¦ï¿½ï¿½È¨ï¿½Ø£ï¿½ï¿½ï¿½Ë³ï¿½ò£ºµï¿½1Â·ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½2Â·ï¿½ï¿½10ï¿½ï¿½ï¿½ï¿½3Â·ï¿½ï¿½100...ï¿½ï¿½7Â·ï¿½ï¿½1000000ï¿½ï¿½
+    uint32_t track_value2 = 0;  // ´æ´¢¼ÓÈ¨ÇóºÍºóµÄ½á¹û
+    // ¶¨ÒåÃ¿Ò»Â·¶ÔÓ¦µÄÈ¨ÖØ£¨°´Ë³Ðò£ºµÚ1Â·¡Á1¡¢µÚ2Â·¡Á10¡¢µÚ3Â·¡Á100...µÚ7Â·¡Á1000000£©
     uint32_t weight2[] = {1, 10, 100, 1000, 10000, 100000, 1000000};
     
-    // ï¿½ï¿½Â·ï¿½ï¿½È¡ï¿½ï¿½Æ½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½Ó¦È¨ï¿½Øºï¿½ï¿½Û¼ï¿½
+    // ÖðÂ·¶ÁÈ¡µçÆ½£¬³ËÒÔ¶ÔÓ¦È¨ÖØºóÀÛ¼Ó
     track_value2 += (GPIO_ReadInputDataBit(GPIOG, GPIO_Pin_15) ? 1 : 0) * weight2[0];
     track_value2 += (GPIO_ReadInputDataBit(GPIOG, GPIO_Pin_14) ? 1 : 0) * weight2[1];
     track_value2 += (GPIO_ReadInputDataBit(GPIOG, GPIO_Pin_13) ? 1 : 0) * weight2[2];
@@ -100,17 +100,17 @@ uint32_t huidu_Read2(void)
     track_value2 += (GPIO_ReadInputDataBit(GPIOF, GPIO_Pin_14) ? 1 : 0) * weight2[5];
     track_value2 += (GPIO_ReadInputDataBit(GPIOF, GPIO_Pin_13) ? 1 : 0) * weight2[6];
     
-    return track_value2;  // ï¿½ï¿½ï¿½Ø¼ï¿½È¨ï¿½ï¿½
+    return track_value2;  // ·µ»Ø¼ÓÈ¨ºÍ
 }
 
        //huidu_Init3//
 uint32_t huidu_Read3(void)
 {
-    uint32_t track_value3 = 0;  // ï¿½æ´¢ï¿½ï¿½È¨ï¿½ï¿½Íºï¿½Ä½ï¿½ï¿½
-    // ï¿½ï¿½ï¿½ï¿½Ã¿Ò»Â·ï¿½ï¿½Ó¦ï¿½ï¿½È¨ï¿½Ø£ï¿½ï¿½ï¿½Ë³ï¿½ò£ºµï¿½1Â·ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½2Â·ï¿½ï¿½10ï¿½ï¿½ï¿½ï¿½3Â·ï¿½ï¿½100...ï¿½ï¿½7Â·ï¿½ï¿½1000000ï¿½ï¿½
+    uint32_t track_value3 = 0;  // ´æ´¢¼ÓÈ¨ÇóºÍºóµÄ½á¹û
+    // ¶¨ÒåÃ¿Ò»Â·¶ÔÓ¦µÄÈ¨ÖØ£¨°´Ë³Ðò£ºµÚ1Â·¡Á1¡¢µÚ2Â·¡Á10¡¢µÚ3Â·¡Á100...µÚ7Â·¡Á1000000£©
     uint32_t weight3[] = {1, 10, 100, 1000, 10000, 100000, 1000000};
     
-    // ï¿½ï¿½Â·ï¿½ï¿½È¡ï¿½ï¿½Æ½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½Ó¦È¨ï¿½Øºï¿½ï¿½Û¼ï¿½
+    // ÖðÂ·¶ÁÈ¡µçÆ½£¬³ËÒÔ¶ÔÓ¦È¨ÖØºóÀÛ¼Ó
     track_value3 += (GPIO_ReadInputDataBit(GPIOF, GPIO_Pin_11) ? 1 : 0) * weight3[0];
     track_value3 += (GPIO_ReadInputDataBit(GPIOF, GPIO_Pin_10) ? 1 : 0) * weight3[1];
     track_value3 += (GPIO_ReadInputDataBit(GPIOF, GPIO_Pin_9) ? 1 : 0) * weight3[2];
@@ -119,17 +119,17 @@ uint32_t huidu_Read3(void)
     track_value3 += (GPIO_ReadInputDataBit(GPIOF, GPIO_Pin_6) ? 1 : 0) * weight3[5];
     track_value3 += (GPIO_ReadInputDataBit(GPIOF, GPIO_Pin_5) ? 1 : 0) * weight3[6];
     
-    return track_value3;  // ï¿½ï¿½ï¿½Ø¼ï¿½È¨ï¿½ï¿½
+    return track_value3;  // ·µ»Ø¼ÓÈ¨ºÍ
 }
 
        //huidu_Init4//
 uint32_t huidu_Read4(void)
 {
-    uint32_t track_value4 = 0;  // ï¿½æ´¢ï¿½ï¿½È¨ï¿½ï¿½Íºï¿½Ä½ï¿½ï¿½
-    // ï¿½ï¿½ï¿½ï¿½Ã¿Ò»Â·ï¿½ï¿½Ó¦ï¿½ï¿½È¨ï¿½Ø£ï¿½ï¿½ï¿½Ë³ï¿½ò£ºµï¿½1Â·ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½2Â·ï¿½ï¿½10ï¿½ï¿½ï¿½ï¿½3Â·ï¿½ï¿½100...ï¿½ï¿½7Â·ï¿½ï¿½1000000ï¿½ï¿½
+    uint32_t track_value4 = 0;  // ´æ´¢¼ÓÈ¨ÇóºÍºóµÄ½á¹û
+    // ¶¨ÒåÃ¿Ò»Â·¶ÔÓ¦µÄÈ¨ÖØ£¨°´Ë³Ðò£ºµÚ1Â·¡Á1¡¢µÚ2Â·¡Á10¡¢µÚ3Â·¡Á100...µÚ7Â·¡Á1000000£©
     uint32_t weight4[] = {1, 10, 100, 1000, 10000, 100000, 1000000};
-
-    // ï¿½ï¿½Â·ï¿½ï¿½È¡ï¿½ï¿½Æ½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½Ó¦È¨ï¿½Øºï¿½ï¿½Û¼ï¿½
+    
+    // ÖðÂ·¶ÁÈ¡µçÆ½£¬³ËÒÔ¶ÔÓ¦È¨ÖØºóÀÛ¼Ó
     track_value4 += (GPIO_ReadInputDataBit(GPIOE, GPIO_Pin_6) ? 1 : 0) * weight4[0];
     track_value4 += (GPIO_ReadInputDataBit(GPIOE, GPIO_Pin_5) ? 1 : 0) * weight4[1];
     track_value4 += (GPIO_ReadInputDataBit(GPIOE, GPIO_Pin_4) ? 1 : 0) * weight4[2];
@@ -137,123 +137,7 @@ uint32_t huidu_Read4(void)
     track_value4 += (GPIO_ReadInputDataBit(GPIOE, GPIO_Pin_2) ? 1 : 0) * weight4[4];
     track_value4 += (GPIO_ReadInputDataBit(GPIOE, GPIO_Pin_1) ? 1 : 0) * weight4[5];
     track_value4 += (GPIO_ReadInputDataBit(GPIOE, GPIO_Pin_0) ? 1 : 0) * weight4[6];
-
-    return track_value4;  // ï¿½ï¿½ï¿½Ø¼ï¿½È¨ï¿½ï¿½
-}
-
-          //FD5//
-void huidu_Init5(void)
-{
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE);
-
-    GPIO_InitTypeDef GPIO_InitStructure;
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_6;
-    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-    GPIO_Init(GPIOD, &GPIO_InitStructure);
-}
-
-          //FD6//
-void huidu_Init6(void)
-{
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE);
-
-    GPIO_InitTypeDef GPIO_InitStructure;
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_7 | GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_11 | GPIO_Pin_12 | GPIO_Pin_13;
-    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-    GPIO_Init(GPIOD, &GPIO_InitStructure);
-}
-
-          //FD7//
-void huidu_Init7(void)
-{
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
-
-    GPIO_InitTypeDef GPIO_InitStructure;
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_6 | GPIO_Pin_7 | GPIO_Pin_9 | GPIO_Pin_10;
-    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-    GPIO_Init(GPIOA, &GPIO_InitStructure);
-}
-
-          //FD8//
-void huidu_Init8(void)
-{
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
-
-    GPIO_InitTypeDef GPIO_InitStructure;
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_3 | GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
-    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-    GPIO_Init(GPIOB, &GPIO_InitStructure);
-}
-
-       //huidu_Read5//
-uint32_t huidu_Read5(void)
-{
-    uint32_t track_value5 = 0;
-    uint32_t weight5[] = {1, 10, 100, 1000, 10000, 100000, 1000000};
-
-    track_value5 += (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_6) ? 1 : 0) * weight5[0];
-    track_value5 += (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_5) ? 1 : 0) * weight5[1];
-    track_value5 += (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_4) ? 1 : 0) * weight5[2];
-    track_value5 += (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_3) ? 1 : 0) * weight5[3];
-    track_value5 += (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_2) ? 1 : 0) * weight5[4];
-    track_value5 += (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_1) ? 1 : 0) * weight5[5];
-    track_value5 += (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_0) ? 1 : 0) * weight5[6];
-
-    return track_value5;
-}
-
-       //huidu_Read6//
-uint32_t huidu_Read6(void)
-{
-    uint32_t track_value6 = 0;
-    uint32_t weight6[] = {1, 10, 100, 1000, 10000, 100000, 1000000};
-
-    track_value6 += (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_13) ? 1 : 0) * weight6[0];
-    track_value6 += (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_12) ? 1 : 0) * weight6[1];
-    track_value6 += (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_11) ? 1 : 0) * weight6[2];
-    track_value6 += (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_10) ? 1 : 0) * weight6[3];
-    track_value6 += (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_9) ? 1 : 0) * weight6[4];
-    track_value6 += (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_8) ? 1 : 0) * weight6[5];
-    track_value6 += (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_7) ? 1 : 0) * weight6[6];
-
-    return track_value6;
-}
-
-       //huidu_Read7//
-uint32_t huidu_Read7(void)
-{
-    uint32_t track_value7 = 0;
-    uint32_t weight7[] = {1, 10, 100, 1000, 10000, 100000, 1000000};
-
-    track_value7 += (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_7) ? 1 : 0) * weight7[0];
-    track_value7 += (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_6) ? 1 : 0) * weight7[1];
-    track_value7 += (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_5) ? 1 : 0) * weight7[2];
-    track_value7 += (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_4) ? 1 : 0) * weight7[3];
-    track_value7 += (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_3) ? 1 : 0) * weight7[4];
-    track_value7 += (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_10) ? 1 : 0) * weight7[5];
-    track_value7 += (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_9) ? 1 : 0) * weight7[6];
-
-    return track_value7;
-}
-
-       //huidu_Read8//
-uint32_t huidu_Read8(void)
-{
-    uint32_t track_value8 = 0;
-    uint32_t weight8[] = {1, 10, 100, 1000, 10000, 100000, 1000000};
-
-    track_value8 += (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_15) ? 1 : 0) * weight8[0];
-    track_value8 += (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_14) ? 1 : 0) * weight8[1];
-    track_value8 += (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_13) ? 1 : 0) * weight8[2];
-    track_value8 += (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_12) ? 1 : 0) * weight8[3];
-    track_value8 += (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_3) ? 1 : 0) * weight8[4];
-    track_value8 += (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_1) ? 1 : 0) * weight8[5];
-    track_value8 += (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_0) ? 1 : 0) * weight8[6];
-
-    return track_value8;
+    
+    return track_value4;  // ·µ»Ø¼ÓÈ¨ºÍ
 }
 
