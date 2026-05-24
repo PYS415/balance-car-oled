@@ -1,0 +1,30 @@
+# Keil generated files
+*.uvguix.*
+*.uvoptx
+*.bak
+*.dep
+*.crf
+*.d
+*.o
+*.axf
+*.hex
+*.lnp
+*.iex
+*.htm
+*.sct
+*.scvd
+*.fedb
+*.Administrator
+*.Debugger
+
+# Build output
+Objects/
+Listings/
+DebugConfig/
+
+# Editor backups
+*~
+
+# OS files
+Thumbs.db
+Desktop.ini
